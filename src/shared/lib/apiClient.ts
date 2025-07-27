@@ -1,3 +1,5 @@
+// IMPORTANT - DON'T EDIT THIS FILE
+
 interface ApiErrorResponse {
   message: string;
   [key: string]: unknown;

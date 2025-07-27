@@ -1,7 +1,9 @@
+"use client";
+
 import { Hero, PropertyList, useProperties } from "@/features/property";
 import { EmptyState } from "@/shared/ui/EmptyState";
 import { ErrorState } from "@/shared/ui/ErrorState";
-import { LoadingState } from "@/shared/ui/loadingState";
+import { LoadingState } from "@/shared/ui/LoadingState";
 
 export default function PropertyPage() {
   const {
@@ -11,7 +13,7 @@ export default function PropertyPage() {
     error,
     refetch,
     meta,
-  } = useProperties();
+  } = useProperties({});
 
   const isEmpty = !properties || properties.length === 0;
 

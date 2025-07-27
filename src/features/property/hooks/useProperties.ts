@@ -1,3 +1,5 @@
+"use client";
+
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo } from "react";
@@ -20,13 +22,13 @@ const useProperties = ({
 
   const offset = (currentPage - 1) * limit;
 
-  const location_text = searchParams.get("location_text");
-  const min_price = searchParams.get("min_price");
-  const max_price = searchParams.get("max_price");
-  const sort = searchParams.get("sort");
-
   const finalParams = useMemo(() => {
     const filterParams: Partial<PropertyQueryParams> = {};
+    const location_text = searchParams.get("location_text");
+    const min_price = searchParams.get("min_price");
+    const max_price = searchParams.get("max_price");
+    const sort = searchParams.get("sort");
+
     if (location_text && location_text !== "undefined")
       filterParams.location_text = location_text;
     if (min_price && !isNaN(Number(min_price)))
@@ -36,7 +38,7 @@ const useProperties = ({
     if (sort === "asc" || sort === "desc") filterParams.sort = sort;
 
     return { ...initialParams, ...filterParams };
-  }, [initialParams, location_text, min_price, max_price, sort]);
+  }, [initialParams, searchParams]);
 
   const queryKey = [
     QUERY_KEYS.properties,
@@ -58,7 +60,6 @@ const useProperties = ({
     gcTime: 10 * 60 * 1000,
   });
 
-  // Logika prefetching
   useEffect(() => {
     if (!isPlaceholderData && response?.meta?.has_next) {
       const nextPage = currentPage + 1;
