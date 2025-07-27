@@ -1,11 +1,9 @@
-// src/providers/providers.tsx
 "use client";
-
-// Corrected import path to match our architecture
-import { ThemeProvider } from "@/providers/theme-provider";
 
 import { useRouter } from "next/navigation";
 import { RouterProvider } from "react-aria-components";
+import ReactQueryProvider from "./reactQuery-provider";
+import { ThemeProvider } from "@/providers/theme-provider";
 
 declare module "react-aria-components" {
   interface RouterConfig {
@@ -19,9 +17,11 @@ export function Providers({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   return (
     <RouterProvider navigate={router.push}>
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        {children}
-      </ThemeProvider>
+      <ReactQueryProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
+      </ReactQueryProvider>
     </RouterProvider>
   );
 }
