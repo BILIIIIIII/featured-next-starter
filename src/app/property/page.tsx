@@ -1,15 +1,7 @@
 import { Hero, PropertyList, useProperties } from "@/features/property";
 import { EmptyState } from "@/shared/ui/EmptyState";
 import { ErrorState } from "@/shared/ui/ErrorState";
-
-function LoadingState() {
-  return (
-    <div className="flex flex-col justify-center items-center py-24 space-y-4">
-      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-      <p className="text-gray-600">Loading properties...</p>
-    </div>
-  );
-}
+import { LoadingState } from "@/shared/ui/loadingState";
 
 export default function PropertyPage() {
   const {

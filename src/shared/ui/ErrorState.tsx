@@ -1,7 +1,8 @@
 "use client";
 
+import { toast } from "sonner";
 import { IconCircleExclamation, IconRefresh } from "@intentui/icons";
-import { Button } from "./button"; // Asumsi button ada di shared/ui
+import { Button } from "./button";
 
 interface ErrorStateProps {
   title: string;
@@ -10,6 +11,10 @@ interface ErrorStateProps {
 }
 
 export function ErrorState({ title, message, onRetry }: ErrorStateProps) {
+  const handleRetry = () => {
+    toast.info("Attempting to reconnect..."); // Beri feedback instan
+    onRetry();
+  };
   return (
     <div className="flex flex-col justify-center items-center min-h-64 px-4 text-center">
       <div className="bg-red-50 border border-red-200 rounded-lg p-8 max-w-md w-full">
@@ -20,7 +25,7 @@ export function ErrorState({ title, message, onRetry }: ErrorStateProps) {
         </div>
         <h2 className="text-xl font-semibold text-red-800 mb-2">{title}</h2>
         <p className="text-red-700 mb-6 text-sm">{message}</p>
-        <Button onClick={onRetry} className="w-full sm:w-auto" size="sm">
+        <Button onClick={handleRetry} className="w-full sm:w-auto" size="sm">
           <IconRefresh className="w-4 h-4 mr-2" />
           Try Again
         </Button>

@@ -1,5 +1,6 @@
 "use client";
 
+import { Toast } from "@/shared/ui/toast";
 import { useRouter } from "next/navigation";
 import { RouterProvider } from "react-aria-components";
 import ReactQueryProvider from "./reactQuery-provider";
@@ -20,6 +21,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
       <ReactQueryProvider>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
+          <Toast />
         </ThemeProvider>
       </ReactQueryProvider>
     </RouterProvider>
