@@ -5,7 +5,7 @@ import { Button } from "@/shared/ui/button";
 
 export function HomePage() {
   return (
-    <div className="container mx-auto flex flex-col items-center justify-center text-center py-20">
+    <div className="container  mx-auto flex flex-col items-center justify-center text-center py-20">
       <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100">
         Welcome to the Starter Kit
       </h1>

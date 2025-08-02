@@ -19,7 +19,7 @@ export function ThemeSwitcher() {
 
   return (
     <Button
-      intent="outline"
+      intent="plain"
       size="sm"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
     >

@@ -7,8 +7,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-mono: "Geist Mono", 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace';
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: "Geist Mono", "ui-monospace", "SFMono-Regular", "Menlo", "Monaco",
+    "Consolas", '"Liberation Mono"', '"Courier New"', "monospace";
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -101,7 +103,7 @@
   --accent-fg: oklch(1 0 0);
   --muted: oklch(0.21 0.006 285.885);
   --muted-fg: oklch(0.705 0.015 286.067);
-  --overlay: oklch(0.170 0.006 285.885);
+  --overlay: oklch(0.17 0.006 285.885);
   --overlay-fg: oklch(0.985 0 0);
   --success: oklch(0.596 0.145 163.225);
   --success-fg: oklch(1 0 0);
@@ -109,12 +111,12 @@
   --warning-fg: oklch(0.279 0.077 45.635);
   --danger: oklch(0.577 0.245 27.325);
   --danger-fg: oklch(0.971 0.013 17.38);
-  --border: oklch(0.270 0.013 285.805);
-  --input: oklch(0.320 0.013 285.805);
+  --border: oklch(0.27 0.013 285.805);
+  --input: oklch(0.32 0.013 285.805);
   --ring: oklch(0.546 0.245 262.881);
-  --navbar: oklch(0.170 0.006 285.885);
+  --navbar: oklch(0.17 0.006 285.885);
   --navbar-fg: oklch(0.985 0 0);
-  --sidebar: oklch(0.160 0.006 285.885);
+  --sidebar: oklch(0.16 0.006 285.885);
   --sidebar-fg: oklch(0.985 0 0);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.623 0.214 259.815);
@@ -124,7 +126,11 @@
 }
 
 @layer base {
-  *, ::after, ::before, ::backdrop, ::file-selector-button {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
     border-color: var(--border, currentColor);
   }
   * {
@@ -144,6 +150,7 @@
     background-color: var(--bg);
     color: var(--fg);
   }
+
   ::-webkit-scrollbar {
     width: 4px;
   }

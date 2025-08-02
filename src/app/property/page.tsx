@@ -53,18 +53,25 @@ export default function PropertyPage() {
 
     return (
       <section>
-        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-4 mb-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
-            All Properties
-          </h2>
+        <div className="flex flex-col items-baseline gap-2 mb-8 md:flex-row md:justify-between">
+          <div>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-50">
+              All Properties
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 mt-1">
+              Find the best property that fits your needs.
+            </p>
+          </div>
           {meta && (
-            <span className="text-sm md:text-base text-slate-500">
+            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
               Showing {properties.length} of {meta.total.toLocaleString()}{" "}
               properties
             </span>
           )}
         </div>
-        <PropertyList data={properties} />
+        <article className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+          <PropertyList data={properties} />
+        </article>
       </section>
     );
   };

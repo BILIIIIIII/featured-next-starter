@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import {
+  LiquidGlassContainer,
+  LiquidGlassPresets,
+} from "@/shared/ui/LiquidGlass";
 import { Providers } from "@/providers/providers";
 import { Header } from "@/shared/widgets/Header";
 import { Footer } from "@/shared/widgets/Footer";
@@ -31,7 +35,14 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen bg-white dark:bg-black`}
       >
         <Providers>
-          <Header />
+          <LiquidGlassContainer
+            config={LiquidGlassPresets.header}
+            position="sticky"
+            positionProps={{ top: "2rem" }}
+            className="mx-auto"
+          >
+            <Header />
+          </LiquidGlassContainer>
           <main className="flex-grow">{children}</main>
           <Footer />
         </Providers>

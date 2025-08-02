@@ -25,7 +25,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="text-lg font-bold">
+        <Link href="/" className="text-sm font-bold bg-bg/90 p-2 rounded-lg">
           Next Starter Kit
         </Link>
 
@@ -34,7 +34,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="bg-bg/90 p-2 rounded-lg text-sm font-medium text-muted-foreground  hover:text-foreground"
             >
               {link.label}
             </Link>
