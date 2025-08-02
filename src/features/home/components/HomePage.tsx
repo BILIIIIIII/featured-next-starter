@@ -18,7 +18,7 @@ export function HomePage() {
           <Button>View Properties Example</Button>
         </Link>
         <a
-          href="https://github.com/your-repo"
+          href="https://github.com/BILIIIIIII/featured-next-starter"
           target="_blank"
           rel="noopener noreferrer"
         >
